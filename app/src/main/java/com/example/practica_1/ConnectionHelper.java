@@ -1,5 +1,6 @@
 package com.example.practica_1;
 
+import android.annotation.SuppressLint;
 import android.os.StrictMode;
 import android.util.Log;
 
@@ -10,7 +11,8 @@ public class ConnectionHelper {
 
     String userName, userPassword, ip, port, dataBase;
 
-    public Connection connection()
+    @SuppressLint("NewApi")
+    public Connection connectionClass()
     {
         ip="ngknn.ru";
         dataBase="Trifonova_41P";
@@ -37,4 +39,6 @@ public class ConnectionHelper {
         }
         return connection;
     }
+
+
 }
