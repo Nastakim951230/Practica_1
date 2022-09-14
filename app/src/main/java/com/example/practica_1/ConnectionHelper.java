@@ -14,8 +14,8 @@ public class ConnectionHelper {
     @SuppressLint("NewApi")
     public Connection connectionClass()
     {
-        ip="ngknn.ru";
-        dataBase="Trifonova_41P";
+        ip ="ngknn.ru";
+        dataBase ="Trifonova_41P";
         userPassword="12357";
         userName="31П";
         port="1433";

@@ -3,6 +3,7 @@ package com.example.practica_1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,15 +26,15 @@ String ConnectionResult="";
 
     public  void GetTextFromSql(View v)
     {
-        TextView id=findViewById(R.id.txtID);
-        TextView Name=findViewById(R.id.txtName);
-        TextView Surname=findViewById(R.id.txtSurname);
-        TextView MiddleName=findViewById(R.id.txtMiddleName);
-        TextView Floor=findViewById(R.id.txtFloor);
-        TextView DateOfBirth=findViewById(R.id.txtDB);
-        TextView PlaceOfWork=findViewById(R.id.txtPlaceOfWork);
-        TextView JobTitle=findViewById(R.id.txtJobTitle);
-        TextView PhoneNumber=findViewById(R.id.txtTelefon);
+        TextView ID = findViewById(R.id.txtID);
+        TextView Name = findViewById(R.id.txtName);
+        TextView Surname = findViewById(R.id.txtSurname);
+        TextView MiddleName = findViewById(R.id.txtMiddleName);
+        TextView Floor = findViewById(R.id.txtFloor);
+        TextView DateOfBirth = findViewById(R.id.txtDB);
+        TextView PlaceOfWork = findViewById(R.id.txtPlaceOfWork);
+        TextView JobTitle = findViewById(R.id.txtJobTitle);
+        TextView PhoneNumber = findViewById(R.id.txtTelefon);
 
         try{
 
@@ -48,7 +49,7 @@ String ConnectionResult="";
 
                 while (resultSet.next())
                 {
-                    id.setText(resultSet.getString(1));
+                    ID.setText(resultSet.getString(1));
                     Name.setText(resultSet.getString(2));
                     Surname.setText(resultSet.getString(3));
                     MiddleName.setText(resultSet.getString(4));
@@ -70,7 +71,7 @@ String ConnectionResult="";
 
         catch (Exception ex)
         {
-
+            Log.e("Error", ex.getMessage());
         }
 
 
