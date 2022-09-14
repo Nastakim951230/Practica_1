@@ -4,31 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9FC9EA"
     tools:context=".Adding">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nazad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="298dp"
         android:layout_marginBottom="20dp"
+        android:background="#3F51B5"
         android:onClick="onClick"
         android:text="Назад"
+        android:textColor="#F8ECEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:background="#3F51B5"
+        android:onClick="Add"
         android:text="Добавление"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"></androidx.appcompat.widget.AppCompatButton>
 
     <EditText
         android:id="@+id/etFloor"
@@ -38,6 +44,7 @@
         android:layout_marginEnd="1dp"
         android:hint="Floor"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +59,7 @@
         android:hint="Birthday"
         android:inputType="date"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +73,7 @@
         android:layout_marginEnd="1dp"
         android:hint="Job title"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +87,7 @@
         android:layout_marginEnd="1dp"
         android:hint="Place of work"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,6 +102,7 @@
         android:hint="Phone number "
         android:inputType="number"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +120,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#FFFFFF"></EditText>
 
     <EditText
         android:id="@+id/etSurname"
@@ -119,6 +131,7 @@
         android:layout_marginEnd="1dp"
         android:hint="Surname"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/etMiddleName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -134,6 +147,7 @@
         android:layout_marginEnd="1dp"
         android:hint="Middle name"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

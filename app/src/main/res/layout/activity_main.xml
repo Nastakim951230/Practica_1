@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9FC9EA"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="410dp"
         android:text="Phone number "
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
         android:text="Job title"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/txtDB"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
         android:text="Place of work"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtFloor"
         app:layout_constraintTop_toBottomOf="@+id/txtSurname" />
@@ -44,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="51dp"
         android:text="Id"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="Name"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/txtSurname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtSurname" />
@@ -64,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:text="Surname"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/txtMiddleName"
         app:layout_constraintStart_toEndOf="@+id/txtName"
         app:layout_constraintTop_toBottomOf="@+id/txtID" />
@@ -74,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="Middle name"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtSurname"
         app:layout_constraintTop_toTopOf="@+id/txtSurname" />
@@ -84,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:text="Floor"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/txtDB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSurname" />
@@ -94,13 +103,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:text="Birthday"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtFloor"
         app:layout_constraintTop_toBottomOf="@+id/txtSurname" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btClic"
         android:layout_width="wrap_content"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:onClick="GetTextFromSql"
@@ -109,8 +121,10 @@
         app:layout_constraintEnd_toStartOf="@+id/btAdd"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btAdd"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"

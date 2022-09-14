@@ -59,6 +59,7 @@ String ConnectionResult="";
 
                 while (resultSet.next())
                 {
+
                     ID.setText(resultSet.getString(1));
                     Name.setText(resultSet.getString(2));
                     Surname.setText(resultSet.getString(3));
