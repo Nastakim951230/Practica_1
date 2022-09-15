@@ -7,10 +7,14 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -36,15 +40,10 @@ String ConnectionResult="";
 
     public  void GetTextFromSql(View v)
     {
-        TextView ID = findViewById(R.id.txtID);
-        TextView Name = findViewById(R.id.txtName);
-        TextView Surname = findViewById(R.id.txtSurname);
-        TextView MiddleName = findViewById(R.id.txtMiddleName);
-        TextView Floor = findViewById(R.id.txtFloor);
-        TextView DateOfBirth = findViewById(R.id.txtDB);
-        TextView PlaceOfWork = findViewById(R.id.txtPlaceOfWork);
-        TextView JobTitle = findViewById(R.id.txtJobTitle);
-        TextView PhoneNumber = findViewById(R.id.txtTelefon);
+
+        TableLayout layout = findViewById(R.id.dbLayout);
+        layout.removeAllViews();
+
 
         try{
 
@@ -59,19 +58,54 @@ String ConnectionResult="";
 
                 while (resultSet.next())
                 {
+                    TableRow dbLayoutRow = new TableRow(this);
+                    dbLayoutRow.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+                    TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                            TableRow.LayoutParams.WRAP_CONTENT);
 
-                    ID.setText(resultSet.getString(1));
-                    Name.setText(resultSet.getString(2));
-                    Surname.setText(resultSet.getString(3));
-                    MiddleName.setText(resultSet.getString(4));
-                    Floor.setText(resultSet.getString(5));
-                    DateOfBirth.setText(resultSet.getString(6));
-                    PlaceOfWork.setText(resultSet.getString(7));
-                    JobTitle.setText(resultSet.getString(8));
-                    PhoneNumber.setText(resultSet.getString(9));
+
+
+                    TextView Name = new TextView(this);
+                    params.weight = 1.0f;
+                    Name.setLayoutParams(params);
+                    Name.setText(resultSet.getString(1));
+                    Name.setTextSize(12);
+                    Name.setGravity(Gravity.CENTER);
+                    dbLayoutRow.addView(Name);
+
+                    TextView Surname = new TextView(this);
+                    params.weight = 1.0f;
+                    Surname.setLayoutParams(params);
+                    Surname.setText(resultSet.getString(2));
+                    Surname.setTextSize(12);
+                    Name.setGravity(Gravity.CENTER);
+                    dbLayoutRow.addView(Surname);
+
+
+                    TextView Floor = new TextView(this);
+                    params.weight = 1.0f;
+                    Floor.setLayoutParams(params);
+                    Floor.setText(resultSet.getString(3));
+                    Floor.setTextSize(12);
+                    Name.setGravity(Gravity.CENTER);
+                    dbLayoutRow.addView(Floor);
+
+
+
+                    TextView JobTitle = new TextView(this);
+                    params.weight = 1.0f;
+                    JobTitle.setLayoutParams(params);
+                    JobTitle.setText(resultSet.getString(4));
+                    JobTitle.setTextSize(12);
+                    Name.setGravity(Gravity.CENTER);
+                    dbLayoutRow.addView(JobTitle);
+
+
+
+                    layout.addView(dbLayoutRow);
 
                 }
-
             }
 
             else
