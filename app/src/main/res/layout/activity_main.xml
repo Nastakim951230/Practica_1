@@ -14,7 +14,7 @@
         android:layout_marginTop="10dp"
         android:background="#3F51B5"
         android:onClick="GetTextFromSql"
-        android:text="Show"
+        android:text="Вывести"
 
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginTop="10dp"
         android:background="#3F51B5"
         android:onClick="onClick"
-        android:text="Add"
+        android:text="Добавление"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

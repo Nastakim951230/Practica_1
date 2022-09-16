@@ -101,8 +101,6 @@ String ConnectionResult="";
                     Name.setGravity(Gravity.CENTER);
                     dbLayoutRow.addView(JobTitle);
 
-
-
                     layout.addView(dbLayoutRow);
 
                 }
@@ -110,13 +108,13 @@ String ConnectionResult="";
 
             else
             {
-                ConnectionResult="Checl Connection";
+                ConnectionResult="Проверить соединение";
             }
         }
 
         catch (Exception ex)
         {
-            Log.e("Error", ex.getMessage());
+            Log.e("Ошибка", ex.getMessage());
         }
 
 

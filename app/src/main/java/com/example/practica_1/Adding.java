@@ -39,23 +39,24 @@ public class Adding extends AppCompatActivity {
 
         if (Name.getText().length()==0|| Surname.getText().length()==0 || Floor.getText().length()==0 ||  JobTitle.getText().length()==0 )
         {
-            Toast.makeText(this,"Required fields are not filled", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Не заполнены обязательные поля", Toast.LENGTH_LONG).show();
             return;
         }
         try {
             ConnectionHelper connectionHelper = new ConnectionHelper();
             connection = connectionHelper.connectionClass();
             if (connection != null) {
-                String query = "INSERT INTO Sotrudnic (Name, Surname, Floor, Job_title) VALUES (" + Name.getText() + ", " + Surname.getText() + ", " + Floor.getText() + ", " + JobTitle.getText() + ")";
+                String query = "INSERT INTO Sotrudnic (Name, Surname, Floor, Job_title) VALUES ('" + Name.getText() + "', '" + Surname.getText() + "', '" + Floor.getText() + "', '" + JobTitle.getText() + "')";
                 Statement statement = connection.createStatement();
                 ResultSet result = statement.executeQuery(query);
+                Toast.makeText(this,"Успешно добавлено", Toast.LENGTH_LONG).show();
 
             }
         }
 
         catch (Exception ex)
         {
-            Toast.makeText(this,"An error has occurred", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Произошла ошибка", Toast.LENGTH_LONG).show();
         }
         Name.setText("");
         Surname.setText("");
