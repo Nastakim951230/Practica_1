@@ -59,7 +59,7 @@ public class UPDATE extends AppCompatActivity {
                     params.weight = 1.0f;
                     ID.setLayoutParams(params);
                     ID.setText(resultSet.getString(1));
-                    ID.setTextSize(12);
+                    ID.setTextSize(11);
                     ID.setGravity(Gravity.CENTER);
                     dbUpdate.addView(ID);
 
