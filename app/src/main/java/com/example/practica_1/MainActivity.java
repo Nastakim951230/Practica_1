@@ -26,9 +26,10 @@ String ConnectionResult="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        GetTextFromSql();
     }
 
-    public  void GetTextFromSql(View v)
+    public  void GetTextFromSql()
     {
 
         TableLayout layout = findViewById(R.id.dbLayoutRow);
@@ -134,5 +135,14 @@ String ConnectionResult="";
 
     }
 
+    public void onClickDelet(View v) {
+        switch (v.getId()) {
+            case R.id.btClic:
+                Intent intent=new Intent(this,Delet.class);
+                startActivity(intent);
+                break;
+        }
+
+    }
 
 }

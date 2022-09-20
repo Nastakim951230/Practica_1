@@ -17,21 +17,22 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class UPDATE extends AppCompatActivity {
+public class Delet extends AppCompatActivity {
 
     Connection connection;
     String ConnectionResult="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update);
-        FromSql();
-    }
+        setContentView(R.layout.activity_delet);
 
-    public  void FromSql()
+        GetTextFromSql();
+    }
+    public  void GetTextFromSql()
     {
 
-        TableLayout layout = findViewById(R.id.dbUpdate);
+        TableLayout layout = findViewById(R.id.dbDelet);
         layout.removeAllViews();
 
 
@@ -48,8 +49,8 @@ public class UPDATE extends AppCompatActivity {
 
                 while (resultSet.next())
                 {
-                    TableRow dbUpdate = new TableRow(this);
-                    dbUpdate.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    TableRow dbDelet = new TableRow(this);
+                    dbDelet.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT));
                     TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
                             TableRow.LayoutParams.WRAP_CONTENT);
@@ -61,7 +62,7 @@ public class UPDATE extends AppCompatActivity {
                     ID.setText(resultSet.getString(1));
                     ID.setTextSize(12);
                     ID.setGravity(Gravity.CENTER);
-                    dbUpdate.addView(ID);
+                    dbDelet.addView(ID);
 
                     TextView Name = new TextView(this);
                     params.weight = 1.0f;
@@ -69,7 +70,7 @@ public class UPDATE extends AppCompatActivity {
                     Name.setText(resultSet.getString(2));
                     Name.setTextSize(12);
                     Name.setGravity(Gravity.CENTER);
-                    dbUpdate.addView(Name);
+                    dbDelet.addView(Name);
 
                     TextView Surname = new TextView(this);
                     params.weight = 1.0f;
@@ -77,7 +78,7 @@ public class UPDATE extends AppCompatActivity {
                     Surname.setText(resultSet.getString(3));
                     Surname.setTextSize(12);
                     Name.setGravity(Gravity.CENTER);
-                    dbUpdate.addView(Surname);
+                    dbDelet.addView(Surname);
 
 
                     TextView Floor = new TextView(this);
@@ -86,9 +87,7 @@ public class UPDATE extends AppCompatActivity {
                     Floor.setText(resultSet.getString(4));
                     Floor.setTextSize(12);
                     Name.setGravity(Gravity.CENTER);
-                    dbUpdate.addView(Floor);
-
-
+                    dbDelet.addView(Floor);
 
                     TextView JobTitle = new TextView(this);
                     params.weight = 1.0f;
@@ -96,9 +95,9 @@ public class UPDATE extends AppCompatActivity {
                     JobTitle.setText(resultSet.getString(5));
                     JobTitle.setTextSize(12);
                     Name.setGravity(Gravity.CENTER);
-                    dbUpdate.addView(JobTitle);
+                    dbDelet.addView(JobTitle);
 
-                    layout.addView(dbUpdate);
+                    layout.addView(dbDelet);
 
                 }
             }
@@ -113,17 +112,15 @@ public class UPDATE extends AppCompatActivity {
         {
             Log.e("Ошибка", ex.getMessage());
         }
+
     }
 
-    public void Update (View v)
+    public void Delet (View v)
     {
-        TextView ID = findViewById(R.id.UPID);
-        TextView Name = findViewById(R.id.UPName);
-        TextView Surname = findViewById(R.id.UPSurname);
-        TextView Floor = findViewById(R.id.UPFloor);
-        TextView JobTitle = findViewById(R.id.UPJobTitle);
+        TextView ID = findViewById(R.id.DelID);
 
-        if (ID.getText().length()==0||Name.getText().length()==0|| Surname.getText().length()==0 || Floor.getText().length()==0 ||  JobTitle.getText().length()==0 )
+
+        if (ID.getText().length()==0)
         {
             Toast.makeText(this,"Не заполнены обязательные поля", Toast.LENGTH_LONG).show();
             return;
@@ -132,10 +129,10 @@ public class UPDATE extends AppCompatActivity {
             ConnectionHelper connectionHelper = new ConnectionHelper();
             connection = connectionHelper.connectionClass();
             if (connection != null) {
-                String query = "UPDATE Sotrudnic Set Name = '" + Name.getText() + "', Surname = '" + Surname.getText() + "', Floor ='" + Floor.getText() + "', Job_title ='" + JobTitle.getText() + "' WHERE ID= "+ID.getText()+"";
+                String query = "DELETE FROM  Sotrudnic  WHERE ID= "+ID.getText()+"";
                 Statement statement = connection.createStatement();
                 ResultSet result = statement.executeQuery(query);
-                Toast.makeText(this,"Успешно изменено", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Успешно удалено", Toast.LENGTH_LONG).show();
 
             }
         }
@@ -144,18 +141,15 @@ public class UPDATE extends AppCompatActivity {
         {
             Toast.makeText(this,"Произошла ошибка", Toast.LENGTH_LONG).show();
         }
-        FromSql();
+        GetTextFromSql();
         ID.setText("");
-        Name.setText("");
-        Surname.setText("");
-        Floor.setText("");
-        JobTitle.setText("");
+
 
     }
 
-    public void onClickPereho(View v) {
+    public void onClickPerehod(View v) {
         switch (v.getId()) {
-            case R.id.BTNazad:
+            case R.id.BTNZ:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
