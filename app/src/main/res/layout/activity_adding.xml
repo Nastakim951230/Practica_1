@@ -11,29 +11,26 @@
         android:id="@+id/nazad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="298dp"
-        android:layout_marginBottom="20dp"
         android:background="#3F51B5"
         android:onClick="onClick"
         android:text="Назад"
         android:textColor="#F8ECEC"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etJobTitle" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
         android:layout_width="142dp"
         android:layout_height="48dp"
-        android:layout_marginTop="150dp"
         android:background="#3F51B5"
         android:onClick="Add"
         android:text="Добавление"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nazad"
         app:layout_constraintTop_toBottomOf="@+id/etJobTitle"></androidx.appcompat.widget.AppCompatButton>
 
     <EditText

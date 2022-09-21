@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/Trifonova/Practica_1/app/src/main/res/layout/activity_adding.xml" value="0.328125" />
-        <entry key="..\:/Android/Trifonova/Practica_1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Android/Trifonova/Practica_1/app/src/main/res/layout/activity_adding.xml" value="0.22" />
+        <entry key="..\:/Android/Trifonova/Practica_1/app/src/main/res/layout/activity_delet.xml" value="0.15704154002026344" />
+        <entry key="..\:/Android/Trifonova/Practica_1/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android/Trifonova/Practica_1/app/src/main/res/layout/activity_update.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Practica_1/app/src/main/res/layout/activity_adding.xml" value="0.2" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Practica_1/app/src/main/res/layout/activity_delet.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Practica_1/app/src/main/res/layout/activity_main.xml" value="0.264" />

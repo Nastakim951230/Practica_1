@@ -3,6 +3,7 @@ package com.example.practica_1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -60,41 +61,51 @@ public class Delet extends AppCompatActivity {
                     params.weight = 1.0f;
                     ID.setLayoutParams(params);
                     ID.setText(resultSet.getString(1));
-                    ID.setTextSize(12);
-                    ID.setGravity(Gravity.CENTER);
+                    ID.setTextSize(14);
+                    ID.setTextColor(Color.BLUE);
+                    ID.setPadding(5, 5, 5, 5);
+                    ID.setGravity(Gravity.LEFT);
                     dbDelet.addView(ID);
 
                     TextView Name = new TextView(this);
-                    params.weight = 1.0f;
+                    params.weight = 3.0f;
                     Name.setLayoutParams(params);
                     Name.setText(resultSet.getString(2));
-                    Name.setTextSize(12);
-                    Name.setGravity(Gravity.CENTER);
+                    Name.setTextSize(14);
+                    Name.setTextColor(Color.BLUE);
+                    Name.setPadding(5, 5, 5, 5);
+                    Name.setGravity(Gravity.LEFT);
                     dbDelet.addView(Name);
 
                     TextView Surname = new TextView(this);
-                    params.weight = 1.0f;
+                    params.weight = 3.0f;
                     Surname.setLayoutParams(params);
                     Surname.setText(resultSet.getString(3));
-                    Surname.setTextSize(12);
-                    Name.setGravity(Gravity.CENTER);
+                    Surname.setTextSize(14);
+                    Surname.setTextColor(Color.BLUE);
+                    Surname.setPadding(5, 5, 5, 5);
+                    Surname.setGravity(Gravity.LEFT);
                     dbDelet.addView(Surname);
 
 
                     TextView Floor = new TextView(this);
-                    params.weight = 1.0f;
+                    params.weight = 3.0f;
                     Floor.setLayoutParams(params);
                     Floor.setText(resultSet.getString(4));
-                    Floor.setTextSize(12);
-                    Name.setGravity(Gravity.CENTER);
+                    Floor.setTextSize(14);
+                    Floor.setTextColor(Color.BLUE);
+                    Floor.setPadding(5, 5, 5, 5);
+                    Floor.setGravity(Gravity.LEFT);
                     dbDelet.addView(Floor);
 
                     TextView JobTitle = new TextView(this);
-                    params.weight = 1.0f;
+                    params.weight = 3.0f;
                     JobTitle.setLayoutParams(params);
                     JobTitle.setText(resultSet.getString(5));
-                    JobTitle.setTextSize(12);
-                    Name.setGravity(Gravity.CENTER);
+                    JobTitle.setTextSize(14);
+                    JobTitle.setTextColor(Color.BLUE);
+                    JobTitle.setPadding(5, 5, 5, 5);
+                    JobTitle.setGravity(Gravity.LEFT);
                     dbDelet.addView(JobTitle);
 
                     layout.addView(dbDelet);
