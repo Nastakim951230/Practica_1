@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
-
+    String[] countries = { "По убыванию", "По возрастанию"};
 Connection connection;
 String ConnectionResult="";
 
@@ -51,10 +51,6 @@ String ConnectionResult="";
                 String query = "Select * From Sotrudnic";
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
-
-
-
-
 
                 while (resultSet.next())
                 {
@@ -165,28 +161,94 @@ String ConnectionResult="";
     }
     public void onClickPoisk(View v)
     {
-        TextView Poisk = findViewById(R.id.Poisk);
-                if (Poisk.getText().length()==0)
-                {
-                    Toast.makeText(this,"Не заполнены обязательные поля", Toast.LENGTH_LONG).show();
+
+                TableLayout layoutPoisk = findViewById(R.id.dbLayoutRow);
+                layoutPoisk.removeAllViews();
+
+                TextView Poisk = findViewById(R.id.txtPoisk);
+                if (Poisk.getText().length() == 0) {
+                    Toast.makeText(this, "Не заполнены обязательные поля", Toast.LENGTH_LONG).show();
                     return;
                 }
-        try {
-            ConnectionHelper connectionHelper = new ConnectionHelper();
-            connection = connectionHelper.connectionClass();
-            if (connection != null) {
-                String query = "Select * from Sotrudnic where Surname='" + Poisk.getText() +"'";
-                Statement statement = connection.createStatement();
-                ResultSet result = statement.executeQuery(query);
-                Toast.makeText(this,"Успешно изменено", Toast.LENGTH_LONG).show();
 
-            }
-        }
+                try {
+                    ConnectionHelper connectionHelper = new ConnectionHelper();
+                    connection = connectionHelper.connectionClass();
+                    if (connection != null) {
+                        String queryPoisk = "SELECT * FROM  Sotrudnic where Surname like'%" + Poisk.getText() + "%' ";
+                        Statement statement = connection.createStatement();
+                        ResultSet result = statement.executeQuery(queryPoisk);
+                        while (result.next())
+                        {
+                            TableRow dbLayoutRow = new TableRow(this);
+                            dbLayoutRow.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT));
+                            TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                                    TableRow.LayoutParams.WRAP_CONTENT);
 
-        catch (Exception ex)
-        {
-            Toast.makeText(this,"Произошла ошибка", Toast.LENGTH_LONG).show();
-        }
+
+                            TextView ID = new TextView(this);
+                            params.weight = 1.0f;
+                            ID.setLayoutParams(params);
+                            ID.setText(result.getString(1));
+                            ID.setTextColor(Color.BLUE);
+                            ID.setPadding(5, 5, 5, 5);
+                            ID.setTextSize(14);
+                            ID.setGravity(Gravity.LEFT);
+                            dbLayoutRow.addView(ID);
+
+                            TextView Name = new TextView(this);
+                            params.weight = 3.0f;
+                            Name.setLayoutParams(params);
+                            Name.setText(result.getString(2));
+                            Name.setTextColor(Color.BLUE);
+                            Name.setPadding(5, 5, 5, 5);
+                            Name.setTextSize(14);
+                            Name.setGravity(Gravity.LEFT);
+                            dbLayoutRow.addView(Name);
+
+                            TextView Surname = new TextView(this);
+                            params.weight = 3.0f;
+                            Surname.setLayoutParams(params);
+                            Surname.setText(result.getString(3));
+                            Surname.setTextColor(Color.BLUE);
+                            Surname.setPadding(5, 5, 5, 5);
+                            Surname.setTextSize(14);
+                            Surname.setGravity(Gravity.LEFT);
+                            dbLayoutRow.addView(Surname);
+
+                            TextView Floor = new TextView(this);
+                            params.weight = 3.0f;
+                            Floor.setLayoutParams(params);
+                            Floor.setText(result.getString(4));
+                            Floor.setTextColor(Color.BLUE);
+                            Floor.setPadding(5, 5, 5, 5);
+                            Floor.setTextSize(14);
+                            Floor.setGravity(Gravity.LEFT);
+                            dbLayoutRow.addView(Floor);
+
+                            TextView JobTitle = new TextView(this);
+                            params.weight = 3.0f;
+                            JobTitle.setLayoutParams(params);
+                            JobTitle.setText(result.getString(5));
+                            JobTitle.setTextColor(Color.BLUE);
+                            JobTitle.setPadding(5, 5, 5, 5);
+                            JobTitle.setTextSize(14);
+                            JobTitle.setGravity(Gravity.LEFT);
+                            dbLayoutRow.addView(JobTitle);
+
+                            layoutPoisk.addView(dbLayoutRow);
+
+                        }
+                    }
+                } catch (Exception ex) {
+                    Toast.makeText(this, "Произошла ошибка", Toast.LENGTH_LONG).show();
+                }
+    }
+
+    public void OnClickCleaning(View v)
+    {
+        TextView Poisk = findViewById(R.id.txtPoisk);
         GetTextFromSql();
         Poisk.setText("");
     }

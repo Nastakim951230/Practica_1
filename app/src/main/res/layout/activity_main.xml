@@ -9,18 +9,31 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btUpdate3"
+        android:id="@+id/btPoisk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
         android:background="#3F51B5"
         android:onClick="onClickPoisk"
         android:text="Поиск"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/dbLayoutRow"
+        app:layout_constraintEnd_toStartOf="@+id/btCleaning"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/txtPoisk" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btCleaning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:onClick="OnClickCleaning"
+        android:text="Очистить"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/dbLayoutRow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/UPFloor2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btPoisk"
+        app:layout_constraintTop_toBottomOf="@+id/txtPoisk" />
 
     <TableLayout
         android:id="@+id/dbLayoutRow"
@@ -33,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UPFloor2">
+        app:layout_constraintTop_toBottomOf="@+id/btPoisk">
 
         <TableRow
             android:layout_width="match_parent"
@@ -87,23 +100,23 @@
         app:layout_constraintTop_toBottomOf="@+id/dbLayoutRow" />
 
     <EditText
-        android:id="@+id/UPFloor2"
-        android:layout_width="148dp"
+        android:id="@+id/txtPoisk"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:hint="Фамилия"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/dbLayoutRow"
-        app:layout_constraintEnd_toStartOf="@+id/btUpdate3"
+        app:layout_constraintBottom_toTopOf="@+id/btPoisk"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spinner"
         app:layout_constraintTop_toTopOf="parent"></EditText>
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="138dp"
-        android:layout_height="41dp"
-        app:layout_constraintBottom_toTopOf="@+id/dbLayoutRow"
-        app:layout_constraintEnd_toStartOf="@+id/UPFloor2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btPoisk"
+        app:layout_constraintEnd_toStartOf="@+id/txtPoisk"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
