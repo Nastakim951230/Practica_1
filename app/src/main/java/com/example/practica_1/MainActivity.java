@@ -25,11 +25,8 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-
 Connection connection;
 String ConnectionResult="";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
