@@ -25,7 +25,7 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner spinner1;
+
 Connection connection;
 String ConnectionResult="";
 
@@ -35,15 +35,12 @@ String ConnectionResult="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         GetTextFromSql();
 
     }
 
     public  void GetTextFromSql()
     {
-
         TableLayout layout = findViewById(R.id.dbLayoutRow);
         layout.removeAllViews();
 
