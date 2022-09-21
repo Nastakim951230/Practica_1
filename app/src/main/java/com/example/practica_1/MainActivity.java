@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -162,5 +163,33 @@ String ConnectionResult="";
         }
 
     }
+    public void onClickPoisk(View v)
+    {
+        TextView Poisk = findViewById(R.id.Poisk);
+                if (Poisk.getText().length()==0)
+                {
+                    Toast.makeText(this,"Не заполнены обязательные поля", Toast.LENGTH_LONG).show();
+                    return;
+                }
+        try {
+            ConnectionHelper connectionHelper = new ConnectionHelper();
+            connection = connectionHelper.connectionClass();
+            if (connection != null) {
+                String query = "Select * from Sotrudnic where Surname='" + Poisk.getText() +"'";
+                Statement statement = connection.createStatement();
+                ResultSet result = statement.executeQuery(query);
+                Toast.makeText(this,"Успешно изменено", Toast.LENGTH_LONG).show();
+
+            }
+        }
+
+        catch (Exception ex)
+        {
+            Toast.makeText(this,"Произошла ошибка", Toast.LENGTH_LONG).show();
+        }
+        GetTextFromSql();
+        Poisk.setText("");
+    }
+
 
 }
