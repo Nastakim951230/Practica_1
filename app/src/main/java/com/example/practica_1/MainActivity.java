@@ -33,14 +33,12 @@ String ConnectionResult="";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GetTextFromSql();
-
     }
 
     public  void GetTextFromSql()
     {
         TableLayout layout = findViewById(R.id.dbLayoutRow);
         layout.removeAllViews();
-
 
         try{
 
