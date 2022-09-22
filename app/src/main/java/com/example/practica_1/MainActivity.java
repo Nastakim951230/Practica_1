@@ -168,6 +168,7 @@ String ConnectionResult="";
                 TextView Poisk = findViewById(R.id.txtPoisk);
                 if (Poisk.getText().length() == 0) {
                     Toast.makeText(this, "Не заполнены обязательные поля", Toast.LENGTH_LONG).show();
+                    GetTextFromSql();
                     return;
                 }
 
